@@ -16,4 +16,4 @@ def sum_two_smallest_numbers(numbers):
 import heapq
 def sum_two_smallest_numbers(numbers):
     validate = [i for i in numbers if type(i) == int and i > 0] # code for validation
-    return sum(heapq.nsmallest(2, validate))
+    return sum(heapq.nsmallest(2, validate))#Heap does same as .sort(), but more efficient
