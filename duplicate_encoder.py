@@ -24,3 +24,11 @@ def duplicate_encode(word):
         
     return(new_word)
 
+#Revamped solution for efficiency
+def duplicate_encode(word):
+    word = word.lower()
+    char_count = {}
+    for c in word:
+        char_count[c] = char_count.get(c, 0) + 1
+    
+    return "".join(["(" if char_count[c] == 1 else ")" for c in word])
