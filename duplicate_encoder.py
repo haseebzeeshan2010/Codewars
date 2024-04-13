@@ -12,6 +12,8 @@
 def duplicate_encode(word):
     return "".join(["(" if word.lower().count(c) == 1 else ")" for c in word.lower()])
 
+#Efficiency is O(n^3) due to count in time complexity and O(n) in space complexity
+
 #My solution
 def duplicate_encode(word):
     word = word.lower()
@@ -24,11 +26,16 @@ def duplicate_encode(word):
         
     return(new_word)
 
+#Efficiency is O(n^3) due to count in time complexity and O(n) in space complexity
+
 #Revamped solution for efficiency
 def duplicate_encode(word):
     word = word.lower()
     char_count = {}
-    for c in word:
-        char_count[c] = char_count.get(c, 0) + 1
     
-    return "".join(["(" if char_count[c] == 1 else ")" for c in word])
+    for i in word:
+        char_count[i] = char_count.get(i, 0) + 1 # adds to value in dictionary each time character is found
+    
+    return "".join(["(" if char_count[j] == 1 else ")" for j in word])
+
+#Note: This is both O(n) efficiency in space and time complexity
