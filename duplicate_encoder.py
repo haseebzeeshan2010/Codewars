@@ -39,3 +39,16 @@ def duplicate_encode(word):
     return "".join(["(" if char_count[j] == 1 else ")" for j in word])
 
 #Note: This is both O(n) efficiency in space and time complexity
+
+
+# #BELOW IS FOR TESTING ONLY
+# import random
+# import string
+
+# def generate_random_string(length):
+#     """Generate a random string of given length."""
+#     letters = string.ascii_letters
+#     return ''.join(random.choice(letters) for _ in range(length))
+
+# # Generate 1000 random strings of length 10
+# random_strings = [duplicate_encode(generate_random_string(10)) for _ in range(1000)]
