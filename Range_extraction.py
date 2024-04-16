@@ -50,3 +50,20 @@ def solution(args):
     else:
         range_list.append(",".join(temp))
     return(",".join(range_list))
+
+#Optional solution with worse efficiency
+
+
+def solution(args):
+    range_list = []
+    for i in range(len(args)-1,-1,-1):
+        if args[i-1] != int(args[i]) - 1:
+
+            if len(args[i:]) > 2:
+                range_list.append(f"{args[i:][0]}-{args[i:][-1]}")
+            else:
+                range_list += args[i:][::-1]
+            args = args[:i]   
+    
+    
+    return(",".join(map(str,range_list[::-1])))
