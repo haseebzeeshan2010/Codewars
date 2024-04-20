@@ -6,6 +6,12 @@
 # "This is a test        --> "This is a test" 
 # "This is another test" --> "This is rehtona test"
 
+#Best code
+def spin_words(sentence):
+    # Your code goes here
+    return " ".join([x[::-1] if len(x) >= 5 else x for x in sentence.split(" ")])
+
+#My code
 def spin_words(sentence):
     sentence = sentence.split()
     new_sentence = []
