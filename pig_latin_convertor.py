@@ -8,3 +8,5 @@
 def pig_it(text):
     text = [i[1::]+i[0]+"ay" if i.isalpha() else i for i in text.split()] #check if word is an alphabet and apply pig latin
     return " ".join(text)
+
+#Big O Notation: O(n)
