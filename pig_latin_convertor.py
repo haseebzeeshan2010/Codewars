@@ -3,3 +3,8 @@
 # Examples
 # pig_it('Pig latin is cool') # igPay atinlay siay oolcay
 # pig_it('Hello world !')     # elloHay orldway !
+
+#MY CODE, aslo most efficient
+def pig_it(text):
+    text = [i[1::]+i[0]+"ay" if i.isalpha() else i for i in text.split()] #check if word is an alphabet and apply pig latin
+    return " ".join(text)
