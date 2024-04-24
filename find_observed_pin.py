@@ -29,12 +29,12 @@ def get_pins(observed):
 
     for i in observed:
         number = keypad.index(int(i))
-
+    
         possibilities = []
-        print(i)
+        print(i,number)
         if keypad[number+1] != None:
             possibilities.append(keypad[number+1])
-        if keypad[number+4] != None:
+        if number+4 <= 8 and keypad[number+4] != None:
             possibilities.append(keypad[number+4])
         if keypad[number-1] != None:
             possibilities.append(keypad[number-1])
