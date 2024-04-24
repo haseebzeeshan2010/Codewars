@@ -20,3 +20,25 @@
 # Can you help us to find all those variations? It would be nice to have a function, that returns an array (or a list in Java/Kotlin and C#) of all variations for an observed PIN with a length of 1 to 8 digits. We could name the function getPINs (get_pins in python, GetPINs in C#). But please note that all PINs, the observed one and also the results, must be strings, because of potentially leading '0's. We already prepared some test cases for you.
 
 # Detective, we are counting on you!
+
+
+def get_pins(observed):
+    
+    keypad = [None,1,4,7,None,2,5,8,None,3,6,9,None]
+    
+
+    for i in observed:
+        number = keypad.index(int(i))
+
+        possibilities = []
+        print(i)
+        if keypad[number+1] != None:
+            possibilities.append(keypad[number+1])
+        if keypad[number+4] != None:
+            possibilities.append(keypad[number+4])
+        if keypad[number-1] != None:
+            possibilities.append(keypad[number-1])
+        if number-4 >= 0 and keypad[number-4] != None:
+            possibilities.append(keypad[number-4])
+
+        print(possibilities)
