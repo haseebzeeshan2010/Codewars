@@ -26,23 +26,23 @@ import itertools
 
 def get_pins(observed):
     
-    keypad = [None,"1","4","7",None,"2","5","8",None,"3","6","9",None]
-    
+    keypad = [None,None,None,None,"1","4","7",None,"2","5","8",None,"3","6","9",None,None,None,None]    
     possibilities = []
     for i in observed:
         temp = []
         if int(i) == 0:
-            temp.append(8)
+            temp.append("8")
         else:
-
+            if int(i) == 8:
+                temp.append("0")
             number = keypad.index(i)
             if keypad[number+1] != None:
                 temp.append(keypad[number+1])
-            if number+4 <= 8 and keypad[number+4] != None:
+            if keypad[number+4] != None:
                 temp.append(keypad[number+4])
             if keypad[number-1] != None:
                 temp.append(keypad[number-1])
-            if number-4 >= 0 and keypad[number-4] != None:
+            if keypad[number-4] != None:
                 temp.append(keypad[number-4])
 
         temp.append(i)
