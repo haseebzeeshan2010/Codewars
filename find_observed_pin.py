@@ -22,23 +22,37 @@
 # Detective, we are counting on you!
 
 
+import itertools
+
 def get_pins(observed):
     
-    keypad = [None,1,4,7,None,2,5,8,None,3,6,9,None]
+    keypad = [None,"1","4","7",None,"2","5","8",None,"3","6","9",None]
     
-
+    possibilities = []
     for i in observed:
-        number = keypad.index(int(i))
-    
-        possibilities = []
-        print(i,number)
-        if keypad[number+1] != None:
-            possibilities.append(keypad[number+1])
-        if number+4 <= 8 and keypad[number+4] != None:
-            possibilities.append(keypad[number+4])
-        if keypad[number-1] != None:
-            possibilities.append(keypad[number-1])
-        if number-4 >= 0 and keypad[number-4] != None:
-            possibilities.append(keypad[number-4])
+        temp = []
+        if int(i) == 0:
+            temp.append(8)
+        else:
 
-        print(possibilities)
+            number = keypad.index(i)
+            if keypad[number+1] != None:
+                temp.append(keypad[number+1])
+            if number+4 <= 8 and keypad[number+4] != None:
+                temp.append(keypad[number+4])
+            if keypad[number-1] != None:
+                temp.append(keypad[number-1])
+            if number-4 >= 0 and keypad[number-4] != None:
+                temp.append(keypad[number-4])
+
+        temp.append(i)
+        possibilities.append(temp)
+        
+        
+    combinations = itertools.product(*possibilities)
+    combinations = list(combinations)
+    
+    result = ["".join(element) for element in combinations]
+
+    return(result)
+    print(combinations)
