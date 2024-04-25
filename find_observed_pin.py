@@ -22,6 +22,7 @@
 # Detective, we are counting on you!
 
 
+#My solution
 import itertools
 
 def get_pins(observed):
@@ -55,4 +56,4 @@ def get_pins(observed):
     result = ["".join(element) for element in combinations]
 
     return(result)
-    print(combinations)
+    
