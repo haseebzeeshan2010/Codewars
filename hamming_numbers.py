@@ -39,3 +39,4 @@ def hamming(n):
         for i in range(3):
             expos[i] += int(next_hamms[i] == next_hamm)
     return hamms[-1]
+
