@@ -27,9 +27,7 @@ def hamming(n):
     print(len(hamming))
     return hamming[n-1]
 
-#OPTIMISED CODE
-import heapq
-
+#BEST CODE
 def hamming(n):
     bases = [2, 3, 5]
     expos = [0, 0, 0]
@@ -41,4 +39,3 @@ def hamming(n):
         for i in range(3):
             expos[i] += int(next_hamms[i] == next_hamm)
     return hamms[-1]
-
