@@ -27,6 +27,27 @@ def hamming(n):
     print(len(hamming))
     return hamming[n-1]
 
+#OPTIMISED CODE
+import heapq
+
+def hamming(n):
+    if n == 1:
+        return 1
+    
+    seen = set()
+    heap = [1]
+    heapq.heapify(heap)
+    
+    for _ in range(n):
+        ham = heapq.heappop(heap)
+        for factor in [2, 3, 5]:
+            next_ham = ham * factor
+            if next_ham not in seen:
+                seen.add(next_ham)
+                heapq.heappush(heap, next_ham)
+    
+    return ham
+
 #BEST CODE
 def hamming(n):
     bases = [2, 3, 5]
@@ -39,4 +60,3 @@ def hamming(n):
         for i in range(3):
             expos[i] += int(next_hamms[i] == next_hamm)
     return hamms[-1]
-
