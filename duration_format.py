@@ -26,7 +26,7 @@
 
 # A unit of time must be used "as much as possible". It means that the function should not return 61 seconds, but 1 minute and 1 second instead. Formally, the duration specified by of a component must not be greater than any valid more significant unit of time.
 
-#MY SOLUTION
+#MY SOLUTION - ALTERNATIVE BEST SOLUTION
 def format_duration(seconds):
     timeframes = {"year":31536000, "day":86400, "hour":3600, "minute":60, "second":1}
     duration = [] #Extremely unreadable alternative: [f"{seconds // timeframes[i]} {i}" if seconds // timeframes[i] == 1 else f"{seconds // timeframes[i]} {i+'s'}" for i in list(timeframes.keys()) if seconds // timeframes[i] > 0]
