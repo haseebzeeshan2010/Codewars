@@ -85,7 +85,32 @@ class Dinglemouse(object):
         self.queues = queues
         self.capacity = capacity
         pass
+    
+    def direction(self,o):
+        temp = []
         
+        for i in range(0,len(o)):
+            if type(o[i]) == tuple:
+                if len(o[i]) > 0:
+                    for j in o[i]:
+    #                     print(j,o[i])
+                        if j > i:
+                            temp.append("up")
+                        else:
+                            temp.append("down")
+            else:
+                if o[i] > i:
+                    temp.append("up")
+                else:
+                    temp.append("down")
+            
+            
+        return temp.count("up") > temp.count("down")
+            
+
     def theLift(self):
-        print(self.queues,self.capacity)
+        print(self.queues)
+        lift = [2,3,4,5,6,6,6,6,6,6]
+        print(self.direction(self.queues))
+        
         return []
