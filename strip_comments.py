@@ -11,7 +11,7 @@ def strip(string, markers):
 
 def strip_comments(strng, markers):
     strng = strng.split("\n")
-    print(strng, markers)
+
     new_strng = []
 
     for i in strng:
@@ -24,4 +24,12 @@ def strip_comments(strng, markers):
             if new_strng[string][-1] == " ":
                 new_strng[string] = "".join(list(new_strng[string])[:-1])
 
-    return "\n".join(new_strng)
+    
+    new_string = "\n".join(new_strng)
+    
+    print(list(new_string))
+    if len(new_string) != 0:
+        if new_string[0] == "\t" and new_string[1] == "\n" or new_string[0] == " " and new_string[1] == "\n":
+            print("Aye")
+            return new_string[1:]
+    return new_string
