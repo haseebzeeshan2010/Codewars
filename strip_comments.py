@@ -1,44 +1,27 @@
-def strip(strng, markers):
-#     print(strng, len(strng))
-    for j in range(0,len(strng)):
-            if len(strng) == 1:
-                    print("oaaaaaa")
-            if strng[j] in markers:
+def strip(string, markers):
+    found = False
+    for j in range(0,len(string)):
+            if string[j] in markers:
+                return string[:j]
+                found = True
                 
-                print(strng,strng[-1])
-                strng = strng[:j]
-                
-                
-                if strng[-1] == " ":
-                    return strng[:-1]
-                
-                return strng
+    if found == False:
+        return string
 
-def strip_comments(strng, markers): # NOTE: Remember to add \n at end of each one!
-#     print(strng, markers)
+
+def strip_comments(strng, markers):
     strng = strng.split("\n")
-    for i in range(0,len(strng)):
-        stripped = strip(strng[i],markers)
-        if stripped != None:
-            strng[i] = stripped
-    return("\n".join(strng))
-        
-#         if strng[i] in markers:
-#             temp = strng[i:]
-#             begin_index = i
-        
-#         if strng[i] == "\n":
-# #             indexes.append(i)
-#             remove_strng.append(temp[:i-begin_index])
-#             temp = ""
+    print(strng, markers)
+    new_strng = []
 
-        
-         
+    for i in strng:
+        new_strng.append(strip(i,markers))
+            
+    
+    
+    for string in range(0,len(new_strng)):
+        if len(new_strng[string]) != 0:
+            if new_strng[string][-1] == " ":
+                new_strng[string] = "".join(list(new_strng[string])[:-1])
 
-#     print(remove_strng)
-            
-            
-            
-            
-            
-# !apples, pears /nbannanas
+    return "\n".join(new_strng)
