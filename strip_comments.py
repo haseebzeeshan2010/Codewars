@@ -52,7 +52,6 @@ def strip_comments(strng, markers):
     print(list(new_string))
     if len(new_string) != 0:
         if new_string[0] == "\t" and new_string[1] == "\n" or new_string[0] == " " and new_string[1] == "\n":
-            print("Aye")
             return new_string[1:]
     return new_string
 
