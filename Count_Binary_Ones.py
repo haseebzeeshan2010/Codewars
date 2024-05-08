@@ -9,3 +9,8 @@
 # So finally result equals 8.
 # WARNING: Segment may contain billion elements, to pass this kata, your solution cannot iterate through all numbers in the segment!
 
+def count_ones(left, right):
+    ones = 0
+    for i in range(left,right+1):
+        ones += bin(i).count("1")
+    return ones
