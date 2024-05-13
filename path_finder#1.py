@@ -39,3 +39,32 @@ def path_finder(maze):
 #                 print("noo", r_length*i)
     print(maze[r_length*2] , " ", r_length*2)
     return True # can go to lower right corner from upper left one
+
+
+
+#Version 2 Solution
+
+def flood_fill(maze, column, row):
+    print("//////")
+    print(column,row,maze[column],"         ", maze[column][row])
+    
+    print(maze[column][row])
+    if maze[column][row] == ".":
+        print("NOWALL")
+        
+        if len(maze)-1 >= column+1:
+            flood_fill(maze,column+1,row)
+            
+    if maze[column][row] == "W":
+        print("WALL")
+        return False
+    
+#     return True
+    
+
+def path_finder(maze):
+    maze = maze.split("\n")
+    print(maze)
+    
+    print(flood_fill(maze,0,0))
+    return True # can go to lower right corner from upper left one
