@@ -1,5 +1,6 @@
+import itertools
+
 def permutations(s):
-    combin = {}
-    for i in range(0,len(s)):
-        
-    # Code Away!
+    combin = list(itertools.permutations(s))
+    combin = map("".join, combin)
+    return set(combin)
