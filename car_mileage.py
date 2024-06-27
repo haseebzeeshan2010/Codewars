@@ -52,4 +52,7 @@ def is_interesting(number, awesome_phrases):
         #All digits followed by zeroes
         if list(set(str(number)))[-1] == 0:
             return 2
+        #Number is in awesome_phrases
+        if number in awesome_phrases:
+            return 2
     return 0
