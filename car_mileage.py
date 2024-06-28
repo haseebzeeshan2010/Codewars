@@ -47,7 +47,7 @@ def is_interesting(number, awesome_phrases):
     print()
     if number > 99:
         #Every digit is same number
-        if len(set(str(number))) == 1:
+        if len(set(str(number)[1:])) == 1:
             return 2
         #All digits followed by zeroes
         if list(set(str(number)))[-1] == 0:
