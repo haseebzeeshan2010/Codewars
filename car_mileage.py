@@ -55,4 +55,7 @@ def is_interesting(number, awesome_phrases):
         #Number is in awesome_phrases
         if number in awesome_phrases:
             return 2
+        #Number is a palindrome
+        if str(number)[::-1] == str(number):
+            return 2
     return 0
