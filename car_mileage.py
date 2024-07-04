@@ -43,6 +43,7 @@
 
 
 def is_interesting(number, awesome_phrases):
+    range_num = list(map(int, str(number)))
     print(number, " ", awesome_phrases)
     print()
     if number > 99:
@@ -58,4 +59,14 @@ def is_interesting(number, awesome_phrases):
         #Number is a palindrome
         if str(number)[::-1] == str(number):
             return 2
+        
+        
+        
+        #Handle incrementing numbers
+        if range_num[-1] == 0:
+            if range_num == list(range(range_num[0], range_num[0] + len(range_num)-1))+[0]:
+                return 2
+            
+        if range_num == list(range(range_num[0], range_num[0] + len(range_num))):
+                return 2
     return 0
