@@ -23,6 +23,8 @@ def four_squares(n: int) -> Tuple[int, int, int, int]:
     
     
     #STEP 1: Reduce to 2n case or keep as n?
+
+    #If even?
     if n % 2 == 0:
         s = random.randint(1,n) #s is the starting integer value
         
